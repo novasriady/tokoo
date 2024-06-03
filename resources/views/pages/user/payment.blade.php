@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Cart')
+@section('title', 'Pembayaran')
 
 @section('content')
     <div class="px-12 my-8">

@@ -10,15 +10,15 @@
                 <div class="divider my-2"></div>
                 <div class="flex flex-col gap-4">
                     <select class="select select-bordered w-full max-w-xs" wire:model="filters.category_name" wire:change="updateProductList">
-                        <option value="" selected>Category</option>
+                        <option value="" selected>Kategori</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
                         @endforeach
                     </select>
                     <select class="select select-bordered w-full max-w-xs" wire:model="filters.price_range" wire:change="updateProductList">
-                        <option value="" selected>Price Range</option>
+                        <option value="" selected>Range Harga</option>
                         <option value="150000-300000">IDR 150.000 - IDR 300.000</option>
-                        <option value="300000-500000">IDR 300.000 - IDR 500.000</option>
+                        <option value="300000-500000">IDR 300.000 - IDR 500.000</option>-
                     </select>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                 <p>IDR {{ number_format($product->product_price, 0, ',', '.') }}</p>
                             </div>
                             <div class="card-actions justify-start mt-2">
-                                <a href="{{ route('user.productDetails', ['product_id' => $product->product_id]) }}" class="btn bg-gray-800 text-white btn-sm">See Details</a>
+                                <a href="{{ route('user.productDetails', ['product_id' => $product->product_id]) }}" class="btn bg-gray-800 text-white btn-sm">Lihat Detail</a>
                             </div>
                         </div>
                     </div>

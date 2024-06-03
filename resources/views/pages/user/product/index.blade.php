@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Product')
+@section('title', 'Produk')
 
 @section('content')
     <livewire:user.product-list />

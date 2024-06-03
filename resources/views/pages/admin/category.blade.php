@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Category')
+@section('title', 'Kategori')
 
 @section('content')
     <div class="flex flex-col gap-4">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="divider"></div>
                 <div class="flex justify-end">
-                    <button type="submit" class="btn btn-sm bg-gray-800 text-white">Buat</button>
+                    <button type="submit" class="btn btn-sm bg-gray-800 text-white">Buat Kategori</button>
                 </div>
             </form>
         </div>

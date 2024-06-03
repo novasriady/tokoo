@@ -1,18 +1,18 @@
 <nav class="px-12 py-2 bg-white">
     <div class="flex justify-between items-center">
-        <p class="text-xl font-semibold">Thrift</p>
+        <p class="text-xl font-semibold">Toko Ayu Elektrik</p>
         <ul class="flex items-center gap-8">
             <li class="text-sm">
                 <a href="{{ route('user.home') }}">Home</a>
             </li>
             <li class="text-sm">
-                <a href="{{ route('user.product') }}">Products</a>
+                <a href="{{ route('user.product') }}">Produk</a>
             </li>
         </ul>
         @if (!Auth::check())
             <div class="flex items-center gap-4 py-2">
-                <a href="{{ route('auth.login') }}" class="btn btn-outline border border-gray-800 btn-sm">Login</a>
-                <a href="{{ route('auth.register') }}" class="btn btn-sm bg-gray-800 text-white">Register</a>
+                <a href="{{ route('auth.login') }}" class="btn btn-outline border border-gray-800 btn-sm">Masuk</a>
+                <a href="{{ route('auth.register') }}" class="btn btn-sm bg-gray-800 text-white">Daftar</a>
             </div>
         @else
             <div class="px-4 py-2 transition-all cursor-pointer duration-300 rounded-lg hover:bg-gray-200"
@@ -32,13 +32,13 @@
                         <li class="px-4 py-2 cursor-pointer rounded-md transition-all duration-300 hover:bg-gray-200">
                             <a href="{{ route('user.payment') }}" class="flex items-center gap-3">
                                 <i class="fa-solid fa-money-bill"></i>
-                                <span class="text-sm">Payment</span>
+                                <span class="text-sm">Pembayaran</span>
                             </a>
                         </li>
                         <li class="px-4 py-2 cursor-pointer rounded-md transition-all duration-300 hover:bg-gray-200">
                             <a href="{{ route('user.cart') }}" class="flex items-center gap-3">
                                 <i class="fa-solid fa-cart-shopping"></i>
-                                <span class="text-sm">Cart</span>
+                                <span class="text-sm">Keranjang</span>
                             </a>
                         </li>
                         <li class="px-4 py-2 cursor-pointer rounded-md transition-all duration-300 hover:bg-gray-200">

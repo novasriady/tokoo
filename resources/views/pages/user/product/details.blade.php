@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Product')
+@section('title', 'Produk')
 
 @section('content')
     <div class="px-12 my-8">
@@ -14,7 +14,7 @@
                                 <h1 class="font-semibold text-lg">{{ $product->product_name }}</h1>
                                 <p class="text-sm">
                                     {{ $product->category->category_name }} | 
-                                    <span class="font-semibold">{{ $product->product_stock }} Stock Available</span>
+                                    <span class="font-semibold">{{ $product->product_stock }} Stok Tersedia</span>
                                 </p>
                                 <p class="text-sm">{{ $product->product_description }}</p>
                             </div>

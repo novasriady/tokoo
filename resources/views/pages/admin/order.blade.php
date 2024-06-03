@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Order')
+@section('title', 'Pesanan')
 
 @section('content')
     <div class="flex flex-col gap-4">
@@ -65,7 +65,7 @@
                                                 <div class="flex items-center gap-4">
                                                     <h3 class="font-semibold text-lg">Order Details</h3>
                                                     @if ($order->order_status === 'Unpaid')
-                                                        <div class="badge badge-sm badge-error text-white">Tidak Dibaya</div>
+                                                        <div class="badge badge-sm badge-error text-white">Tidak Dibayar</div>
                                                     @elseif ($order->order_status === 'Pending Approval')
                                                         <div class="badge badge-sm badge-warning text-white">Menunggu Persetujuan
                                                         </div>
