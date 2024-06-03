@@ -32,7 +32,10 @@
                             <div class="flex flex-col gap-1">
                                 <p class="text-sm">Silakan lakukan pembayaran ke salah satu rekening bank berikut dan upload bukti pembayaran.</p>
                                 <p>
-                                    <span class="font-medium text-sm">BANK MANDIRI</span>: SATYA MAHENDRA 1234567
+                                    <span class="font-medium text-sm">BANK BCA</span>: NOVA SRIADY 462392434
+                                </p>
+                                <p>
+                                    <span class="font-medium text-sm">BANK MANDIRI</span>: NOVA SRIADY 0231757236345
                                 </p>
                             </div>
                         </div>

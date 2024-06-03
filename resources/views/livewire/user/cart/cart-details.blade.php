@@ -61,6 +61,9 @@
                             <span class="text-error text-sm">{{ $message }}</span>
                         @enderror
                     </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="label-text">*NOTES : Khusus Daerah Purwodadi FREE Ongkos Kirim, Dana akan dikembalikan</label>
+                    </div>
                 </div>
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-1">
