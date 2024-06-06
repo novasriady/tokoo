@@ -8,6 +8,9 @@
             <li class="text-sm">
                 <a href="{{ route('user.product') }}">Produk</a>
             </li>
+            <li class="text-sm">
+                <a href="{{ route('user.about') }}">Tentang Kami</a>
+            </li>
         </ul>
         @if (!Auth::check())
             <div class="flex items-center gap-4 py-2">

@@ -26,7 +26,8 @@ class CartDetails extends Component
     public string $shippingService;
     public string $address;
 
-    public function mount () {
+    public function mount()
+    {
         $cart = session()->get('cart', array());
 
         $this->getCartWeight($cart);
@@ -40,17 +41,19 @@ class CartDetails extends Component
         return view('livewire.user.cart.cart-details');
     }
 
-    protected function getCartWeight(array $data) {
+    protected function getCartWeight(array $data)
+    {
         if (!empty($data)) {
-            foreach($data['order_details'] as $order_detail) {
+            foreach ($data['order_details'] as $order_detail) {
                 $this->totalWeight += $order_detail['detail_weight'];
             }
         }
     }
 
-    protected function getTotalProductPrice(array $data) {
+    protected function getTotalProductPrice(array $data)
+    {
         if (!empty($data)) {
-            foreach($data['order_details'] as $order_detail) {
+            foreach ($data['order_details'] as $order_detail) {
                 $this->totalProductPrice += $order_detail['detail_totalprice'];
             }
         }
@@ -64,7 +67,7 @@ class CartDetails extends Component
             $response = Http::withHeaders([
                 'key' => '7c41c9c6d0c7f23608f0004847eafce3'
             ])->get('https://api.rajaongkir.com/starter/province');
-    
+
             if ($response->successful()) {
                 $this->province = $response->json()['rajaongkir']['results'];
                 Cache::forever('provinces', $this->province);
@@ -73,7 +76,7 @@ class CartDetails extends Component
             }
         }
     }
-    
+
 
     protected function getCity()
     {
@@ -83,7 +86,7 @@ class CartDetails extends Component
             $response = Http::withHeaders([
                 'key' => '7c41c9c6d0c7f23608f0004847eafce3'
             ])->get('https://api.rajaongkir.com/starter/city');
-    
+
             if ($response->successful()) {
                 $this->city = $response->json()['rajaongkir']['results'];
                 Cache::forever('city', $this->city);
@@ -93,7 +96,8 @@ class CartDetails extends Component
         }
     }
 
-    public function getShippingCost() {
+    public function getShippingCost()
+    {
         $this->validate([
             'selectedCity' => 'required',
             'selectedProvince' => 'required',
@@ -101,24 +105,30 @@ class CartDetails extends Component
             'address' => 'required',
         ]);
 
-        $response = Http::withHeaders([
-            'key' => '7c41c9c6d0c7f23608f0004847eafce3'
-        ])->post('https://api.rajaongkir.com/starter/cost', [
-            'origin' => 134,
-            'destination' => $this->selectedCity,
-            'weight' => $this->totalWeight,
-            'courier' => $this->shippingService
-        ]);
-
-        if ($response->successful()) {
-            $this->shippingCost = $response->json()['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'];
-            $this->totalPayment = $this->shippingCost + $this->totalProductPrice;
-        } else {
+        if ($this->selectedCity == 134) {
             $this->shippingCost = 0;
+        } else {
+            $response = Http::withHeaders([
+                'key' => '7c41c9c6d0c7f23608f0004847eafce3'
+            ])->post('https://api.rajaongkir.com/starter/cost', [
+                'origin' => 134,
+                'destination' => $this->selectedCity,
+                'weight' => $this->totalWeight,
+                'courier' => $this->shippingService
+            ]);
+
+            if ($response->successful()) {
+                $this->shippingCost = $response->json()['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'];
+            } else {
+                $this->shippingCost = 0;
+            }
         }
+
+        $this->totalPayment = $this->shippingCost + $this->totalProductPrice;
     }
 
-    public function createOrder() {
+    public function createOrder()
+    {
         $this->validate([
             'selectedCity' => 'required',
             'selectedProvince' => 'required',
@@ -126,10 +136,10 @@ class CartDetails extends Component
             'address' => 'required',
         ]);
 
-        $province = array_values(array_filter($this->province, function($province) {
+        $province = array_values(array_filter($this->province, function ($province) {
             return $province['province_id'] == $this->selectedProvince;
         }));
-        $city = array_values(array_filter($this->city, function($city) {
+        $city = array_values(array_filter($this->city, function ($city) {
             return $city['city_id'] == $this->selectedCity;
         }));
 
@@ -149,14 +159,14 @@ class CartDetails extends Component
         );
 
         DB::beginTransaction();
-            OrderModel::createOrder($data);
-            foreach($cartSession['order_details'] as $orderDetail) {
-                OrderDetailModel::createOrderDetail($orderDetail);
-                ProductModel::updateProductStock(
-                    $orderDetail['detail_product_id'],
-                    $orderDetail['detail_quantity']
-                );
-            }
+        OrderModel::createOrder($data);
+        foreach ($cartSession['order_details'] as $orderDetail) {
+            OrderDetailModel::createOrderDetail($orderDetail);
+            ProductModel::updateProductStock(
+                $orderDetail['detail_product_id'],
+                $orderDetail['detail_quantity']
+            );
+        }
         DB::commit();
 
         session()->forget('cart');

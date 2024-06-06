@@ -7,6 +7,9 @@
     <div class="card-body">
         <h1 class="font-semibold text-lg">Toko Ayu Elektrik Masuk</h1>
         <div class="divider my-0"></div>
+        @if (session('error'))
+            <p class="text-sm text-red-600">{{ session('error') }}</p>
+        @endif
         <form action="{{ route('auth.loginAction') }}" method="POST">
             @csrf
             <div class="flex flex-col gap-4">

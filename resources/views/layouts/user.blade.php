@@ -10,11 +10,12 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
     <livewire:user.navbar />
-    <main>
+    <main class="flex-grow mb-24">
         @yield('content')
     </main>
+    @include('components.user.footer')
 </body>
 
 </html>
