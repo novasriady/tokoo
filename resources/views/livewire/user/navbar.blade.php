@@ -27,6 +27,7 @@
                             {{ Auth::user()->firstname[0] }}
                         </span>
                     </div>
+                    <i class="fa-solid fa-sort-desc"></i>
                 </div>
             </div>
             @if ($isOpenProfileBox)

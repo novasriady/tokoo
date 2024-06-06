@@ -65,7 +65,7 @@
                         @enderror
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label class="label-text">*NOTES : Khusus Daerah Purwodadi FREE Ongkos Kirim, Dana akan dikembalikan</label>
+                        <label class="label-text">*NOTES : Khusus Daerah Purwodadi FREE Ongkos Kirim</label>
                     </div>
                 </div>
                 <div class="flex flex-col gap-4">

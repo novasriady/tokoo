@@ -34,7 +34,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.dashboard');
             }
         } else {
-            return back()->with('error', 'Your Username or Password is incorrect!');
+            return back()->with('error', 'Username atau Password anda salah!');
         }
     }
 }

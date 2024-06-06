@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Login')
+@section('title', 'Masuk')
 
 @section('content')
 <div class="card bg-white shadow-md rounded-xl h-fit w-[22rem]">

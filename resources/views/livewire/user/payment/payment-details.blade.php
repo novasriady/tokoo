@@ -1,7 +1,7 @@
 <div class="card bg-white shadow-md rounded-xl h-fit">
     <div class="card-body">
         <div class="flex items-center justify-between">
-            <h1 class="font-semibold">Payment Details</h1>
+            <h1 class="font-semibold">Detail Pembayaran</h1>
             @if ($order !== null)
                 @if ($order->order_status === 'Unpaid')
                     <div class="badge badge-sm badge-error text-white">Tidak Dibayar</div>
@@ -54,7 +54,7 @@
                         </button>
                     </span>
                     <span wire:loading.remove wire:target="payOrder">
-                        <button class="btn btn-sm text-white bg-gray-800 w-full" wire:click="payOrder('{{ $order->order_id }}')">Pay Order</button>
+                        <button class="btn btn-sm text-white bg-gray-800 w-full" wire:click="payOrder('{{ $order->order_id }}')">Bayar Pesanan</button>
                     </span>
                 </div>
                 <div class="divider my-0"></div>

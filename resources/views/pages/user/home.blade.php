@@ -14,16 +14,43 @@
             </div>
         </div>
     </div>
+    {{-- Contact --}}
+    <section>
+        <div class="relative items-center w-full px-5 pt-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+            <div class="flex flex-col gap-2">
+                <h1 class="font-semibold text-2xl text-center">Kenapa Harus Kami</h1>
+            </div>
+            <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
+                <div class="p-6">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/W0b0PZF/11-removebg-preview.png" alt="blog">
+    
+                    <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Harga Bersaing</h1>
+                    <p class="mx-auto text-base leading-relaxed text-center">Potongan harga khusus bagi anda yang membeli dalam jumlah banyak.</p>             
+                </div>
+                <div class="p-6">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/NLNNHbH/22-removebg-preview.png" alt="blog">
+    
+                    <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Fast Respon</h1>
+                    <p class="mx-auto text-base leading-relaxed text-center">Kami menjual berbagai macam alat listrik yang terbaik & terlengkap. Praktis dan menghemat waktu anda.</p>                
+                </div>
+                <div class="p-6">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/ZW7bZs3/33-removebg-preview-1.png" alt="blog">
+                    <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Gratis Pesan Antar</h1>
+                    <p class="mx-auto text-base leading-relaxed text-center">Kami memberikan gratis pesan antar untuk domisili kabupaten grobogan.</p>                
+                </div>
+            </div>
+        </div>
+    </section>
     {{-- Product --}}
     <section class="mt-20 w-full px-12" id="productSection">
-        <div class="flex flex-col gap-8">
+        <div class="relative flex flex-col gap-8">
             <div class="flex flex-col gap-2">
                 <h1 class="font-semibold text-2xl text-center">Produk Pilihan</h1>
                 <p class="text-center">Pilih produk yang Anda inginkan sekarang!</p>
             </div>
             <div class="grid grid-cols-4 gap-x-6 gap-y-8">
                 @foreach ($products as $product)
-                    <div class="card card-compact w-full bg-slate-400 rounded-xl shadow-md">
+                    <div class="card card-compact w-full bg-white rounded-xl shadow-md">
                         <figure class="h-56 overflow-hidden">
                             <img src="{{ asset('storage/' . $product->product_img) }}" alt="Product Image" class="w-full" />
                         </figure>
