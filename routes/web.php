@@ -10,6 +10,7 @@ use App\Http\Controllers\User\HomeController as UserHomeController;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\User\CartController as UserCartController;
 use App\Http\Controllers\User\PaymentController as UserPaymentController;
+use App\Http\Controllers\User\AboutController as UserAboutController;
 // Auth Controller
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -20,6 +21,7 @@ use App\Http\Middleware\UserAuthCheck;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserHomeController::class, 'index'])->name('user.home');
+Route::get('/about', [UserAboutController::class, 'index'])->name('user.about');
 
 // User -> Product Route
 Route::get('/products', [UserProductController::class, 'index'])->name('user.product');
