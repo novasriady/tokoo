@@ -43,6 +43,9 @@
                                 <option selected>Pilih Layanan Pengiriman</option>
                                 <option value="jne">JNE</option>
                                 <option value="pos">POS</option>
+                                @if ($selectedCity === 134)
+                                    <option value="pesan-antar">Pesan Antar</option>
+                                @endif
                             </select>
                             @error('shippingService')
                                 <span class="text-error text-sm">{{ $message }}</span>
