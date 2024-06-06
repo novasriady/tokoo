@@ -11,7 +11,6 @@
             <div class="max-w-md">
                 <h1 class="mb-5 text-5xl font-bold">Selamat Datang di Toko Ayu Elektrik</h1>
                 <p class="mb-5">Toko ini menyediakan berbagai peralatan elektronik dan listrik</p>
-                <a href="#productSection" class="btn bg-white-800 text-black border-none btn-sm">Cek Produk Kami Sekarang</a>
             </div>
         </div>
     </div>
