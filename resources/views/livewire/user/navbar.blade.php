@@ -9,7 +9,7 @@
                 <a href="{{ route('user.product') }}">Produk</a>
             </li>
             <li class="text-sm">
-                <a href="{{ route('user.about') }}">Tentang Kami</a>
+                <a href="{{ route('user.about') }}">Hubungi Kami</a>
             </li>
         </ul>
         @if (!Auth::check())

@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class CategoryModel extends Model
 {
@@ -13,24 +12,26 @@ class CategoryModel extends Model
 
     protected $table = 'categories';
     protected $primaryKey = 'category_id';
+    public $incrementing = true; // Tambahkan ini untuk memberi tahu Laravel bahwa kolom ini adalah auto-increment.
 
-    protected $fillable = array(
+    protected $fillable = [
         'category_name',
         'category_img',
         'category_description'
-    );
+    ];
 
-    protected $casts = array(
-        'category_id' => 'string'
-    );
+    protected $casts = [
+        'category_id' => 'int' // Ubah ini ke int karena kolom sekarang auto-increment.
+    ];
 
-    public static function getAllCategoryHome () {
+    public static function getAllCategoryHome()
+    {
         $categories = self::limit(4)->get();
-
         return $categories;
     }
 
-    public static function deleteCategory (string $category_id) {
+    public static function deleteCategory(string $category_id)
+    {
         $category = self::find($category_id);
 
         if ($category) {
@@ -40,12 +41,5 @@ class CategoryModel extends Model
 
         return $category;
     }
-
-    public static function boot () {
-        parent::boot();
-
-        static::creating(function ($category) {
-            $category->category_id = Str::uuid();
-        });
-    }
 }
+

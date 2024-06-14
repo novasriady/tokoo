@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('order_details', function (Blueprint $table) {
             $table->uuid('detail_id')->primary();
             $table->uuid('detail_order_id');
-            $table->uuid('detail_product_id');
+            $table->unsignedInteger('detail_product_id'); // Mengubah tipe data menjadi 'unsignedInteger'
             $table->integer('detail_quantity');
             $table->integer('detail_weight');
             $table->integer('detail_totalprice');

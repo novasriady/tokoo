@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->uuid('category_id')->primary();
-            $table->string('category_name');
-            $table->string('category_description');
+            $table->increments('category_id'); // Mengubah tipe data menjadi 'increments'
+            $table->string('category_name',20);
+            $table->string('category_description',100);
             $table->string('category_img');
             $table->timestamps();
         });
@@ -28,3 +28,4 @@ return new class extends Migration
         Schema::dropIfExists('categories');
     }
 };
+

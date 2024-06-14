@@ -22,19 +22,19 @@
             </div>
             <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
                 <div class="p-6">
-                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/W0b0PZF/11-removebg-preview.png" alt="blog">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.postimg.cc/HxXSKBfm/11-removebg-preview.png" alt="blog">
     
                     <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Harga Bersaing</h1>
                     <p class="mx-auto text-base leading-relaxed text-center">Potongan harga khusus bagi anda yang membeli dalam jumlah banyak.</p>             
                 </div>
                 <div class="p-6">
-                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/NLNNHbH/22-removebg-preview.png" alt="blog">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.postimg.cc/sxznR5rh/22-removebg-preview.png" alt="blog">
     
                     <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Fast Respon</h1>
                     <p class="mx-auto text-base leading-relaxed text-center">Kami menjual berbagai macam alat listrik yang terbaik & terlengkap. Praktis dan menghemat waktu anda.</p>                
                 </div>
                 <div class="p-6">
-                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.ibb.co.com/ZW7bZs3/33-removebg-preview-1.png" alt="blog">
+                    <img class="object-cover object-center w-full mb-4 lg:h-48 md:h-36 rounded-xl" src="https://i.postimg.cc/BbCmZtSw/33-removebg-preview-1.png" alt="blog">
                     <h1 class="mx-auto mb-4 font-semibold text-2xl text-center">Gratis Pesan Antar</h1>
                     <p class="mx-auto text-base leading-relaxed text-center">Kami memberikan gratis pesan antar untuk domisili kabupaten grobogan.</p>                
                 </div>
