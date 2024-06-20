@@ -17,8 +17,11 @@
                     </select>
                     <select class="select select-bordered w-full max-w-xs" wire:model="filters.price_range" wire:change="updateProductList">
                         <option value="" selected>Range Harga</option>
-                        <option value="150000-300000">IDR 150.000 - IDR 300.000</option>
-                        <option value="300000-500000">IDR 300.000 - IDR 500.000</option>-
+                        <option value="0-10000">IDR 0 - IDR 10.000</option>
+                        <option value="10000-50000">IDR 10.000 - IDR 50.000</option>
+                        <option value="50000-100000">IDR 50.000 - IDR 100.000</option>
+                        <option value="100000-150000">IDR 100.000 - IDR 150.000</option>
+                        <option value="1500000-200000">IDR 150.000 - IDR 200.000</option>
                     </select>
                 </div>
             </div>
